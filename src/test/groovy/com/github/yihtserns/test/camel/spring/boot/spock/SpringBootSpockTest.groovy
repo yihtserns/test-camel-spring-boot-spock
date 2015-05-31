@@ -15,15 +15,13 @@ import static org.junit.Assert.assertThat;
 /**
  * @author yihtserns
  */
-@RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SpringBootSpockTest.Application.class)
 class SpringBootSpockTest extends Specification {
 
     @Autowired
     Callable<String> greeter;
 
-    @Test
-    void testName() {
+    def testName() {
         when:
         def result = greeter.call()
 

@@ -17,15 +17,13 @@ import static org.junit.Assert.assertThat;
 /**
  * @author yihtserns
  */
-@RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = CamelSpringBootTest.Application.class)
 class CamelSpringBootSpockTest extends Specification {
 
     @Autowired
     ProducerTemplate producerTemplate;
 
-    @Test
-    public void testName() throws Exception {
+    def testName() throws Exception {
         when:
         String result = producerTemplate.requestBody("direct:start", (Object) null, String.class);
 
